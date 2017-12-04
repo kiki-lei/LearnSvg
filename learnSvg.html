@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>学SVG-小可</title>
+  <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    text-align: center;
+  }
+
+  svg {
+    background: #ccc;
+    width: 1000px;
+  }
+  .eyes {
+  	animation: eyesMove 3s linear alternate infinite;
+  }
+  @keyframes eyesMove {
+	  from {
+	    transform: translateX(10px);
+	  }
+	  to {
+	    transform: translateX(-10px);
+	  }
+	}
+  </style>
+</head>
+
+<body>
+  <svg id="svg">
+  	<text x="50%" y="50" fill="white">learn SVG</text>
+  	<!-- 耳朵 -->
+  	<ellipse cx="370" cy="360" rx="105" ry="115" style="fill:#fdd84b;stroke:black;stroke-width:2"/>
+  	<ellipse cx="370" cy="365" rx="95" ry="98" style="fill:#fffa72;stroke:black;stroke-width:2"/>
+  	<ellipse cx="630" cy="360" rx="105" ry="115" style="fill:#fdd84b;stroke:black;stroke-width:2"/>
+  	<ellipse cx="630" cy="365" rx="95" ry="98" style="fill:#fffa72;stroke:black;stroke-width:2"/>
+  	<!-- 大圆脸 -->
+  	<circle cx="500" id="face" cy="400" r="150" fill="#fdd84b" stroke="black" stroke-width="2"/>
+		<!-- 默认表情 -->
+  	<g id="defaulet">
+  		<circle class="eyes" cx="400" cy="420" r="4" fill="#000000" stroke="black" stroke-width="2"/>
+	  	<circle class="eyes" cx="600" cy="420" r="4" fill="#000000" stroke="black" stroke-width="2"/>
+	  	<polygon points="495,450 505,450 500,455" style="fill:black;stroke:black;stroke-width:2" stroke-linecap="round"/>
+  	</g>
+  	<!-- 笑脸 -->
+  	<g id="smile">
+  		<path d="M 360 395 q 5,-10 10 -2" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
+  		<ellipse cx="316" cy="450" rx="15" ry="5" style="fill:#e8592d;stroke:none;transform: rotate(-6deg);"/>
+  		<path d="M 630 395 q 5,-10 10 0" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
+  		<ellipse cx="680" cy="346" rx="15" ry="5" style="fill:#e8592d;stroke:none;transform: rotate(6deg);"/>
+  		  	<path d="M 495,400 505,400 500,405" style="fill:black;stroke:black;stroke-width:1" stroke-linecap="round"/>
+  		  	<path d="M 480,410 q 10,15 20 0 M 500,410 q 10,15 20 0 M 485,416 q 15,105 30 0" stroke="black" stroke-width="2" fill="none" stroke-linecap="round"/>
+  	</g>
+  </svg>
+  <script>
+  	'use strict';
+  	/* 定义一个svg画布，并设置高度为浏览器内容可视区域高度*/
+  	let svg1 = document.getElementById('svg');
+  	let browserHeight = window.innerHeight;
+		// console.log(browserHeight)
+  	svg1.style.height = browserHeight+'px';
+
+  	/* 定义脸 笑脸表情 眼睛 */
+  	let face = document.getElementById('face');
+  	let smile = document.getElementById('smile');
+  	let eyes = document.getElementsByClassName('eyes');
+
+  	/* 隐藏笑脸表情 */
+  	smile.style.display="none";
+
+  	/* 定义鼠标hover 和移除hover的效果 */
+  	face.onmouseover = ()=> {document.getElementById('defaulet').style.display="none"; smile.style.display="block";}
+  	face.onmouseout = ()=> {document.getElementById('defaulet').style.display="block"; smile.style.display="none";}
+  </script>
+</body>
+
+</html>
