@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>仪表盘</title>
+</head>
+
+<body>
+  <svg width="343" height="210" class="svg" style="margin: 0 auto; display: block;">
+    <defs>
+      <lineargradient id="circle-gradient" x1="0%" y1="0%" x2="100%" y2="20%">
+        <stop offset="0%" style="stop-color:#19b9b2;"></stop>
+        <stop offset="30%" style="stop-color:#1bb7b4;"></stop>
+        <stop offset="60%" style="stop-color:#23b0bd;"></stop>
+        <stop offset="100%" style="stop-color:#488ee8;"></stop>
+      </lineargradient>
+    </defs>
+    <circle cx="90" cy="90" r="110" stroke="#d7e3ff" stroke-width="8" fill="transparent" style="stroke-dashoffset: 0; stroke-dasharray: 518px 1000px; stroke-linecap: round;" transform="rotate(135, 120 120)"></circle>
+    <circle cx="90" cy="90" r="95" stroke="#d7e3ff" stroke-width="4" stroke-linecap="round" fill="none" style="stroke-dasharray: 445px 1000px;" transform="rotate(135, 120 120)"></circle>
+    <circle cx="90" cy="90" r="110" stroke="url(#circle-gradient)" stroke-width="12" fill="transparent" style="transition: all .3s ease; stroke-dashoffset: 0; stroke-linecap: round;" transform="rotate(135, 120 120)" id="setDays" stroke-dasharray="518px 1000px"></circle>
+    <g>
+      <text fill="#7f8ba2" font-size="14" x="36" y="222"></text>
+      <text fill="#7f8ba2" font-size="14" x="176" y="222"></text>
+      <text fill="#353535" font-size="20" x="165" y="108" font-family="Microsoft YaHei" text-anchor="middle">距离最后还款日</text>
+      <text fill="#353535" font-size="20" x="165" y="168" font-family="Microsoft YaHei" text-anchor="middle">还剩
+        <tspan fill="#1c93ed" font-size="60" id="lastDays">0</tspan>天
+      </text>
+    </g>
+  </svg>
+</body>
+
+</html>
