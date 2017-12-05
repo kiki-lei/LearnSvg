@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <svg width="343" height="210" class="svg" style="margin: 0 auto; display: block;">
+  <svg width="343" height="210" class="svg" style="margin: 0 auto; display: block;background:#ccc">
     <defs>
       <lineargradient id="circle-gradient" x1="0%" y1="0%" x2="100%" y2="20%">
         <stop offset="0%" style="stop-color:#19b9b2;"></stop>
@@ -16,9 +16,19 @@
         <stop offset="100%" style="stop-color:#488ee8;"></stop>
       </lineargradient>
     </defs>
-    <circle cx="90" cy="90" r="110" stroke="#d7e3ff" stroke-width="8" fill="transparent" style="stroke-dashoffset: 0; stroke-dasharray: 518px 1000px; stroke-linecap: round;" transform="rotate(135, 120 120)"></circle>
-    <circle cx="90" cy="90" r="95" stroke="#d7e3ff" stroke-width="4" stroke-linecap="round" fill="none" style="stroke-dasharray: 445px 1000px;" transform="rotate(135, 120 120)"></circle>
     <circle cx="90" cy="90" r="110" stroke="url(#circle-gradient)" stroke-width="12" fill="transparent" style="transition: all .3s ease; stroke-dashoffset: 0; stroke-linecap: round;" transform="rotate(135, 120 120)" id="setDays" stroke-dasharray="518px 1000px"></circle>
+    <circle cx="90" cy="90" r="110" stroke="#d7e3ff" stroke-width="8" fill="transparent" style="stroke-dashoffset: 0; stroke-dasharray: 518px 1000px; stroke-linecap: round;" transform="rotate(135, 120 120)"></circle>
+
+    <!-- 内圈 -->
+    <!-- 实线圈 -->
+    <!-- <circle cx="90" cy="90" r="95" stroke="#d7e3ff" stroke-width="4" stroke-linecap="round" fill="none" style="stroke-dasharray: 445px 1000px;" transform="rotate(135, 120 120)"></circle> -->
+
+    <!-- 三次贝塞尔1 -->
+    <!-- <path d="M160 240 C204 240, 240 204, 240 160 C240 116, 204 80, 160 80 C116 80, 80 116, 80 160" stroke-linecap="round" stroke-dasharray = "8, 8" stroke="#000000" fill="none" style="stroke-width: 4px;"  transform="rotate(-45, 120 120)"></path> -->
+    <!-- 三次贝塞尔2 -->
+    <path d="M 98,186 C-20 -25,348 -25,230 187" stroke-linecap="round" stroke-dasharray = "8, 8" stroke="#d7e3ff" fill="none" style="stroke-width: 4px;" />
+
+    <!-- 文字 -->
     <g>
       <text fill="#7f8ba2" font-size="14" x="36" y="222"></text>
       <text fill="#7f8ba2" font-size="14" x="176" y="222"></text>
